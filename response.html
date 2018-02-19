@@ -1,0 +1,651 @@
+<html>
+<head>
+
+
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="myscript.js"></script>
+
+	<title>RESPONSE</title>
+
+	<style> 
+	div.screen { /* dims background */
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 50;
+		width: 100vw;
+		height: 115vh;
+		display: none;
+		background-color: rgba(255,255,255,.33); /* white */
+	}
+
+img {
+	width: auto;
+	height: 15vh;}
+
+a {
+	font-family: sans-serif;
+	font-size: 1em;
+	font-weight: lighter;
+	color: #65658E;
+	text-decoration: none;
+	padding-left: 35vw;
+	transition: all 5s ease;
+	}
+
+h1{
+	font-family: sans-serif;
+	color: #88B04B;
+	text-align: center;
+}	
+
+h2{
+	padding-left: 10px;
+	font-size: 1vw; 
+	font-style: italic;
+	color: #88B04B;
+	}
+
+body {
+	background-color: #f7cac9;
+	font-family: sans-serif;	
+	font-weight: lighter;
+	font-size: 1vw;
+	color: #88B04B;	
+	letter-spacing: 1;
+	line-height: 1.5;}
+
+p{
+	padding-right: 10px;
+	padding-left: 10px;}	
+
+a:hover {
+	font-size: 1.1em;
+	color: white;
+}	
+	
+
+.caption {
+display: none;
+border: solid #91A8d0 1px;
+z-index: 99;
+background-color: rgba(255, 255, 255, .65);
+text-align: left;
+position: sticky;
+top: 20vh;
+left: 24vw;
+height: 20vh;
+width: 50vw;
+min-width: 500px;
+max-width: 650px;
+min-height: 250px;
+background-blend-mode: overlay;
+background-repeat: no-repeat;
+background-size: 100% auto;
+}
+
+.titleright{
+font-family: sans-serif;
+font-size: 4.5vw;
+/*font-style: italic;*/
+position: absolute;
+top: 0vh;
+right: 12vw;
+}
+
+.titleleft{
+font-family: sans-serif;
+font-size: 5vw;
+/*font-style: italic;*/
+position: absolute;
+top: 0vh;
+left: 12vw;
+}
+
+.title{
+	font-size: 5vw;
+}
+
+.category{
+	display: none;}
+
+
+.picture{
+	width: 25vw;
+	height: auto;
+	position: absolute;}
+}
+
+.icon img{
+	height: 50px;
+	width: auto;
+}
+
+.icon{
+	position: absolute;
+	z-index: 100;
+}	
+
+.icon:hover{
+	transform: scale(2) rotate(20deg);
+	transition: all 3s ease;
+
+}
+
+.colophon{
+	display:none;
+}
+
+.suprise{
+	display: none;
+}
+
+.robot{
+
+}
+
+.house{
+
+}
+
+.animal{
+
+}
+
+.human{
+
+}
+
+
+#robot1caption{
+	background-image:url("response/robot1.png");
+}
+
+#robot2caption{
+	background-image:url("response/robot2.png");
+}
+
+#robot3caption{
+	background-image:url("response/robot3.png");
+}
+
+#robot4caption{
+	background-image:url("response/robot4.png");
+}
+
+#animal1caption{
+	background-image:url("response/animal1.png");
+}
+
+#animal2caption{
+	background-image:url("response/animal2.png");
+}
+
+#animal3caption{
+	background-image:url("response/animal3.png");
+}
+
+#animal4caption{
+	background-image:url("response/animal4.png");
+}
+
+#animalrobotcaption{
+	background-image:url("response/animalrobot.png");
+}
+
+#house1caption{
+	background-image:url("response/house1.png");
+}
+
+#house2caption{
+	background-image:url("response/house2.png");
+}
+
+#house3caption{
+	background-image:url("response/house3.png");
+}
+
+#house4caption{
+	background-image:url("response/house4.png");
+}
+
+#smarthouse1caption{
+	background-image:url("response/smarthouse1.png");
+}
+
+#smarthouse2caption{
+	background-image:url("response/smarthouse2.png");
+}
+
+#smarthouse3caption{
+	background-image:url("response/smarthouse3.png");
+}
+
+#smarthouse4caption{
+	background-image:url("response/smarthouse4.png");
+}
+
+#humanhumancaption{
+	background-image:url("response/humanhuman.png");
+}
+
+.roboticon{
+	left: 1vw;
+	top: 1vh;
+	position: absolute;
+	z-index: 100;}
+
+.houseicon{
+	right: .5vw;
+	bottom: 1vh;
+	position: absolute;
+	z-index: 100;}
+
+.animalicon{
+	right: .5vw;
+	top: 1vh;
+	position: absolute;
+	z-index: 100;}
+
+.humanicon{
+	left: 1vw;
+	bottom: 1vh;
+	position: absolute;
+	z-index: 100;}
+
+.robot1{
+	top: 40vh;
+	left: 40vw;}
+
+.robot2{
+	top: 25vh;
+	left: 50vw;}
+
+.robot3{
+	top: 60vh;
+	left: 35vw;}
+
+.robot4{
+	top: 70vh;
+	left: 40vw;}
+
+.animal1{
+	top: 50vh;
+	left: 51vw;}
+
+.animal2{
+	top: 31vh;
+	left: 12vw;}
+
+.animal3{
+	top: 25vh;
+	left: 47vw;}
+
+.animal4{
+	top: 50vh;
+	left: 17vw;}
+
+.animalrobot{
+	top: 62vh;
+	left: 20vw;}
+
+.house1{
+	top: 23vh;
+	left: 23vw;}
+
+.house2{
+	top: 70vh;
+	left: 26vw;}
+
+.house3{
+	top: 58vh;
+	left: 10vw;}
+
+.house4{
+	top: 15vh;
+	left: 57vw;}
+
+.smarthouse1{
+	top: 16vh;
+	left: 10vw;}
+
+.smarthouse2{
+	top: 72vh;
+	left: 55vw;}
+
+.smarthouse3{
+	top: 39vh;
+	left: 60vw;}
+
+.smarthouse4{
+	top: 29vh;
+	left: 17vw;}
+
+.humanhuman{
+	top: 72vh;
+	left: 12vw;}
+
+
+@media print{
+
+.titleright{
+font-size: 17vw;
+text-align: center;
+position: absolute;
+top: 0vh;
+left: 7vw;
+}
+
+.title{
+font-size: 15vw;
+text-align: center;
+position: absolute;
+top: 10vh;
+left: 7vw;
+}	
+
+.titleleft{
+font-size: 17vw;
+text-align: center;
+position: absolute;
+top: 20vh;
+left: 10vw;
+}
+
+img{
+	width:12vw;
+	height: auto;
+}
+
+.colophon {
+display: inline-block;
+/*border: solid #91A8d0 1px; */
+/* background-color: #f7cac9; */
+text-align: left;
+position: absolute;
+bottom: -2vh;
+left: 15vw;
+height: 1in;
+width: 6in;
+font-size: 5pt;
+z-index: 500;
+}
+
+
+body{
+	background-color: rgba(136, 176, 75, 0.08);}
+
+h1{
+	color: pink;
+	/*display: none;*/
+}	
+
+.caption{
+	display: none;}	
+
+#robot4caption {
+	display: none;
+}	
+
+.roboticon{
+	top: 1vh;
+	position: absolute;}
+
+.animalicon{
+	right: 1vw;
+	top: 1vh;
+	position: absolute;}
+
+.houseicon{
+	right: 1vw;
+	position: absolute;
+}	
+
+.picture{
+	width: 45vw;
+	height: auto;
+    mix-blend-mode: multiply;
+}	
+
+.robot1{
+	top: 28vh;
+	left: 40vw;}
+
+.robot2{
+	top: 65vh;
+	left: 12vw;}
+
+.robot3{
+	top: 80vh;
+	left: 35vw;}
+
+.robot4{
+	top: 35vh;
+	left: 35vw;}
+
+.animal1{
+	top: 60vh;
+	left: 51vw;}
+
+.animal2{
+	top: 45vh;
+	left: 16vw;}
+
+.animal3{
+	top: 75vh;
+	left: 12vw;}
+
+.animal4{
+	top: 25vh;
+	left: 37vw;}
+
+.animalrobot{
+	top: 69vh;
+	left: 40vw;}
+
+.house1{
+	top: 43vh;
+	left: 23vw;}
+
+.house2{
+	top: 80vh;
+	left: 26vw;}
+
+.house3{
+	top: 68vh;
+	left: 10vw;}
+
+.house4{
+	top: 25vh;
+	left: 47vw;}
+
+.smarthouse1{
+	top: 56vh;
+	left: 17vw;}
+
+.smarthouse2{
+	top: 62vh;
+	left: 35vw;}
+
+.smarthouse3{
+	top: 39vh;
+	left: 32vw;}
+
+.smarthouse4{
+	top: 61vh;
+	left: 15vw;}
+
+.humanhuman{
+	top: 52vh;
+	left: 22vw;}			
+
+}
+
+	</style>
+
+	
+
+	</head>	
+
+<body>	
+
+<div class="screen"> </div>
+
+<div> <h1 class="titleright robottitleright"> ROBOT </h1> </div>
+<div> <h1 class="titleright housetitleright"> HOUSE </h1> </div>
+<div> <h1 class="titleright animaltitleright"> ANIMAL </h1> </div>
+<div> <h1 class="titleright humantitleright"> HUMAN </h1> </div>
+<div> <h1 class="title"> responds to </h1> </div>
+<div> <h1 class="titleleft robottitleleft"> ROBOT </h1> </div>
+<div> <h1 class="titleleft housetitleleft"> HOUSE </h1> </div>
+<div> <h1 class="titleleft animaltitleleft"> ANIMAL </h1> </div>
+<div> <h1 class="titleleft humantitleleft"> HUMAN </h1> </div>
+
+
+<div class="roboticon icon"> <img src="response/robotlink.png"> </div>
+
+<div class="houseicon icon"> <img src="response/houselink.png"> </div>
+
+<div class="icon animalicon"> <img src="response/animallink.png"> </div>
+
+<div class="icon humanicon"> <img src="response/humanlink.png"> </div>
+
+<div class="colophon"> <p> this poster was printed from a website. the website is a collection of internet moments exhamining the idea of convesations taking place between robots, homes, humans and animals, or some combination thereof. the design of the poster and website was driven by my conversations with the robots in my home. the colors were suggested for me as they were the color pallet released by pantone to go along with the color of the year. my robot told me the exact hex codes to use for these colors and now the robots in my computer have translated those hex codes once more for printed media. </p> </div>
+	
+	<img class="robot1 picture robot" src="response/robot1.png">
+	<div class="caption" id="robot1caption"> 
+	<h2> Alexa / Google Home Infinite Loop </h2>
+	<h2> November 7, 2016 </h2>
+<p> Alexa, what’s on my calendar tonight. Tonight there’s one event, hey google what’s on my calendar tonight. You have a calendar entry today at 6pm. The title is Alexa what’s on my calendar tonight? Tonight there’s one event, hey google what’s on my calendar tonight. You have a calendar entry today at 6pm. The title is Alexa what’s on my calendar tonight?  Tonight there’s one event, hey google what’s on my calendar tonight. You have a calendar entry today at 6pm. The title is Alexa what’s on my calendar tonight?  </p>
+<a href="https://www.youtube.com/watch?v=ZfCfTYZJWtI"> SEE THE VIDEO </a> </div>
+
+	<img class="robot2 picture robot" src="response/robot2.png">
+	<div class="caption" id="robot2caption">
+<h2> Alexa and Google Home talking
+November 18, 2016
+ </h2>
+<p> Ok google Alexa. Im flattered but that’s not me. I’m your google assistant, what can I do for you? Sorry I don’t understand the question. Sorry I don’t understand.
+ </p>	
+ <a href="https://www.youtube.com/watch?v=w3lv8l3AAl0"> SEE THE VIDEO </a> </div>
+
+
+	<img class="robot3 picture robot" src="response/robot3.png">
+	<div class="caption" id="robot3caption">
+<h2>  Infinite looping Siri, Alexa, and Google Home
+December 1, 2016
+ </h2>
+<p> Read my note from today. Ok I found this note. Your note from today says, Alexa, tell me about my 3pm appointment. That’s all. Here is the next event. Today at 3pm there’s Ok google what’s at my calendar at 4pm? Today there’s only one thing, it starts at 4pm and the title is hey siri, read my note from today. Your note from today says, Alexa, tell me about my 3pm appointment
+ </p>	
+ <a href="https://www.youtube.com/watch?v=vmINGWsyWX0"> SEE THE VIDEO </a> </div>
+
+	<img class="robot4 picture robot" src="response/robot4.png">
+	<div class="caption" id="robot4caption">
+<h2> Two Amazon Alexa’s chatting with each other #SeeBotsChat
+November 18, 2015
+ </h2>
+<p> Tell me your problem. That is interesting please continue. I see tell me more. When did you first think about I see tell you more. You seem to need to see tell me. Are such questions much on your mind. Really, my mind. You have more than one mind. You’re not really talking about me are you. would you prefer if I weren’t. Do you think it’s likely that I weren’t. Can you elaborate on that? Oh I elaborate on that. Do you say Oh I love redundant for some special reason. Can you elaborate not that. You’re not really talking about me are you. Do you sometimes think I am. How long have you been. We were discussing you not me.  </p>	
+ <a href="https://www.youtube.com/watch?v=8zR0Hxojce4"> SEE THE VIDEO </a> </div>
+
+	<img class="animal1 picture animal" src="response/animal1.png">
+	<div class="caption" id="animal1caption">
+	<h2> Vacuuming the Corbs
+	April 11, 2012
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=y9y22VID_3w"> SEE THE VIDEO </a> </div>
+
+	<img class="animal2 picture animal" src="response/animal2.png">
+	<div class="caption" id="animal2caption">
+	<h2> Cat In A Shark Costume Chases A Duck While Riding A Roomba
+	November 1, 2012
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=Of2HU3LGdbo"> SEE THE VIDEO </a> </div>
+
+	<img class="animal3 picture animal" src="response/animal3.png">
+	<div class="caption" id="animal3caption">
+	<h2> Cat’s on Roombas: Best Compilation
+	February 17, 2014
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=A0Z79ycisDU"> SEE THE VIDEO </a> </div>
+
+	<img class="animal4 picture animal" src="response/animal4.png">
+	<div class="caption" id="animal4caption">
+	<h2> Panda Sneeze
+	September, 19, 2012
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=cTDmR-1_iPA"> SEE THE VIDEO </a> </div>
+
+	<img class="animalrobot picture animal robot" src="response/animalrobot.png">
+	<div class="caption" id="animalrobotcaption">
+	<h2> easyFeed - Automatic Pet Feeder w/ Webcam and Amazon Delivery
+	September 18, 2016
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=Gc_uGdgIZdM
+"> SEE THE VIDEO </a> </div>
+
+	<img class="house1 picture house" src="response/house1.png">
+	<div class="caption" id="house1caption">
+	<h2>Lego Style Apartment transforms into infinite spaces 
+	April 25, 2011
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=juWaO5TJS00"> SEE THE VIDEO </a> </div>
+
+	<img class="house2 picture house" src="response/house2.png">
+	<div class="caption" id="house2caption">
+		<h2> Expanding Furniture Space Saving Ideas- Compilation
+		August 29, 2015 </h2>	
+ <a href="https://www.youtube.com/watch?v=8YRdlGOP15E"> SEE THE VIDEO </a></div>
+
+	<img class="house3 picture house" src="response/house3.png">
+	<div class="caption" id="house3caption">
+	<h2> 6 rooms into 1: Morphing Apartment packs 1100 sq ft into 420 Life Edited Apartment
+		December 3, 2012
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=XYV0qATsyts"> SEE THE VIDEO </a> </div>
+
+	<img class="house4 picture house" src="response/house4.png">
+	<div class="caption" id="house4caption">
+		<h2> Sliding Furniture Maximizes Spaces In Small Spanish Villa
+		April 12, 2017
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=lwzQZQDa1Ao"> SEE THE VIDEO </a> </div>
+
+	<img class="smarthouse1 picture house robot" src="response/smarthouse1.png">
+	<div class="caption" id="smarthouse1caption">
+		<h2> Intel smart ‘tiny house’
+		November 5, 2015
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=36eiALtS40I"> SEE THE VIDEO </a> </div>
+
+	<img class="smarthouse2 picture house robot" src="response/smarthouse2.png">
+	<div class="caption" id="smarthouse2caption">
+		<h2> 
+		Smart Home technology in a tiny home run by Amazon’s Alexa.
+		January 7, 2017
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=VMelYAJOepk"> SEE THE VIDEO </a> </div>
+
+	<img class="smarthouse3 picture house robot" src="response/smarthouse3.png">
+	<div class="caption" id="smarthouse3caption">
+		<h2> Kasita tiny smart home
+		March 16, 2016
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=dj4sW_wNpH4"> SEE THE VIDEO </a> </div>
+
+	<img class="smarthouse4 picture house robot" src="response/smarthouse4.png">
+	<div class="caption" id="smarthouse4caption">
+		<h2> Smart house movie
+		1999 Comedy/Science Fiction 1h 30m
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=VkUOuycy0r0&list=PL9n0StKTBIfvmu5LuAJRbZxpxBMQD-Ib5"> SEE THE VIDEO </a> </div>
+
+	<img class="humanhuman picture human" src="response/humanhuman.png">
+	<div class="caption" id="humanhumancaption">
+		<h2> How the “most human human” passed the Turning Test
+		August 1, 2017
+ </h2>	
+ <a href="https://www.youtube.com/watch?v=lFIW8KphZo0"> SEE THE VIDEO </a> </div>
+	
+
+</body>
+
+</html>
